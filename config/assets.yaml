@@ -1,0 +1,22 @@
+# Symbols, intervals, horizons and keywords per asset
+interval: "1h"
+horizons: [1, 4, 24]
+primary_horizon: 4
+fee_bps_per_side: 10
+
+assets:
+  BTCUSDT:
+    base_asset: "BTC"
+    quote_asset: "USDT"
+    news_keywords: ["bitcoin", "BTC"]
+    is_benchmark: true
+  ETHUSDT:
+    base_asset: "ETH"
+    quote_asset: "USDT"
+    news_keywords: ["ethereum", "ETH"]
+    is_benchmark: false
+  SOLUSDT:
+    base_asset: "SOL"
+    quote_asset: "USDT"
+    news_keywords: ["solana", "SOL"]
+    is_benchmark: false

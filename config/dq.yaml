@@ -1,0 +1,24 @@
+# Data Quality thresholds and checks
+checks:
+  schema:
+    severity: "error"
+  duplicates:
+    severity: "error"
+  gaps:
+    severity: "error"
+    max_retries: 1
+  ohlc_consistency:
+    severity: "error"
+  freshness:
+    severity: "error"
+    max_delay_minutes: 90
+  price_outlier:
+    severity: "warn"
+    rolling_window: 48
+    std_threshold: 5.0
+  news_volume_anomaly:
+    severity: "warn"
+    trailing_days: 30
+    zscore_threshold: 3.5
+  sentiment_bounds:
+    severity: "error"

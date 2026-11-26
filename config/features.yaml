@@ -1,0 +1,43 @@
+# Feature groups and parameters
+groups:
+  returns:
+    enabled: true
+    windows: [1, 2, 4, 8, 24, 72]
+  volatility:
+    enabled: true
+    windows: [6, 12, 24, 72]
+    parkinson: true
+    garman_klass: true
+    atr_window: 14
+  trend:
+    enabled: true
+    rsi_windows: [14, 28]
+    macd:
+      fast: 12
+      slow: 26
+      signal: 9
+    ema_ratios: [[12, 26], [50, 200]]
+    roc_windows: [6, 12, 24]
+  mean_reversion:
+    enabled: true
+    bollinger_window: 20
+    bollinger_std: 2.0
+    zscore_window: 24
+  volume_flow:
+    enabled: true
+    volume_zscore_window: 24
+    taker_buy_ratio: true
+    trades_change_window: 4
+  sentiment:
+    enabled: true
+    windows_hours: [6, 24]
+    decay_half_life_hours: 12
+  cross_asset:
+    enabled: true
+    benchmark: "BTCUSDT"
+    rolling_correlation_windows: [24, 72]
+  calendar:
+    enabled: true
+    sin_cos_encoding: true
+  on_chain:
+    enabled: false  # v1.1 candidate

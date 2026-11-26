@@ -1,0 +1,30 @@
+# Modeling parameters, search spaces, and thresholds
+models:
+  xgboost:
+    enabled: true
+    direction:
+      objective: "binary:logistic"
+      eval_metric: "logloss"
+    expected_return:
+      objective: "reg:squarederror"
+      eval_metric: "rmse"
+  random_forest:
+    enabled: true
+    n_estimators: 100
+    max_depth: 6
+
+tuning:
+  optuna:
+    n_trials: 30
+    timeout_seconds: 1800  # 30 min budget for GitHub Actions
+    direction_metric: "mcc"
+    return_metric: "spearman_ic"
+
+calibration:
+  method: "isotonic"  # "isotonic" or "sigmoid" (Platt)
+  cv: "prefit"
+
+signals:
+  tau_hi: 0.55
+  tau_lo: 0.45
+  fee_buffer_bps: 15

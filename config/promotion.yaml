@@ -1,0 +1,16 @@
+# Promotion gate thresholds and retrain triggers
+primary_metric_direction: "mcc"
+primary_metric_return: "spearman_ic"
+bootstrap_confidence: 0.95
+min_beat_baseline_folds_frac: 0.70
+max_ece: 0.05
+fee_bps_per_side: 10
+
+retrain:
+  schedule: "weekly"
+  cooldown_days: 3
+  psi_threshold: 0.2
+  live_window_days: 14
+
+rollback:
+  underperform_days: 7
